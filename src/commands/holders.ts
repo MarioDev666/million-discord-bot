@@ -1,4 +1,4 @@
-import { CommandContext, SlashCommand} from 'slash-create';
+import { SlashCommand} from 'slash-create';
 import {MillionStatsService} from '../services/MillionStatsService';
 import * as Discord from'discord.js';
 
@@ -14,7 +14,7 @@ module.exports = class HelloCommand extends SlashCommand {
     this.filePath = __filename;
   }
 
-  async run(ctx: CommandContext) {
+  async run(ctx) {
     let exampleEmbed;
     try {
       const {data, hasError, error} = await MillionStatsService.getHolders();
@@ -48,13 +48,13 @@ module.exports = class HelloCommand extends SlashCommand {
               false
             );
           
-        return await ctx.send({embeds: [exampleEmbed], ephemeral: true});
+        await ctx.send({embeds: [exampleEmbed], ephemeral: true});
     } catch (error) {
       console.log('"holders" command error: \n', error);
       exampleEmbed = new Discord.MessageEmbed()
       .setColor('#C51162')//Pink50 (A700)
       .addField(`Something went wrong`, `try again a bit later.`)
-      return await ctx.send({embeds: [exampleEmbed], ephemeral: true});
+      await ctx.send({embeds: [exampleEmbed], ephemeral: true});
     }
   }
 };

@@ -17,6 +17,14 @@ module.exports = class HelloCommand extends SlashCommand {
   async run(ctx) {
     let exampleEmbed;
     try {
+      exampleEmbed = new Discord.MessageEmbed()
+            .setColor('#C51162')//Pink50 (A700)
+            .addField(
+              `Getting Data`, '...',
+              false
+            );
+      await ctx.send({embeds: [exampleEmbed], ephemeral: true});
+
       const {data, hasError, error} = await MillionStatsService.getHolders();
       if (hasError) throw error;
 

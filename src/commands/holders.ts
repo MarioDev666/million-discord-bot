@@ -17,6 +17,14 @@ module.exports = class HelloCommand extends SlashCommand {
   async run(ctx) {
     let exampleEmbed;
     try {
+      exampleEmbed = new Discord.MessageEmbed()
+            .setColor('#C51162')//Pink50 (A700)
+            .addField(
+              `Getting Holder's Count...`, `\u200B`,
+              false
+            );
+      const msg = await ctx.send({embeds: [exampleEmbed], ephemeral: true});
+
       const {data, hasError, error} = await MillionStatsService.getHolders();
       if (hasError) throw error;
 
@@ -48,8 +56,8 @@ module.exports = class HelloCommand extends SlashCommand {
               false
             );
             
-          
-        await ctx.send({embeds: [exampleEmbed], ephemeral: true});
+            await msg.edit({embeds: [exampleEmbed], ephemeral: true})
+        //await ctx.send({embeds: [exampleEmbed], ephemeral: true});
     } catch (error) {
       console.log('"holders" command error: \n', error);
       exampleEmbed = new Discord.MessageEmbed()

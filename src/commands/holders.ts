@@ -23,7 +23,7 @@ module.exports = class HelloCommand extends SlashCommand {
               `Getting Holder's Count...`, `\u200B`,
               false
             );
-      const msg = await ctx.send({embeds: [exampleEmbed], ephemeral: true}).then(async (msg) =>{
+      await ctx.send({embeds: [exampleEmbed], ephemeral: true}).then(async (msg) =>{
         //your code here! msg.edit will work here.
         const {data, hasError, error} = await MillionStatsService.getHolders();
       if (hasError) throw error;

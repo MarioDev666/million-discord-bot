@@ -2,7 +2,7 @@ import {client as discordClient} from '../../discordClient';
 import {VoiceChannel} from 'discord.js';
 import {TwitterService} from '../../services/TwitterService';
 import {channelIds} from '../../channel-IDs';
-import {RedditService} from '../../services/RedditService';
+//import {RedditService} from '../../services/RedditService';
 import {EmailSubsService} from '../../services/EmailSubs';
 import {MillionStatsService} from '../../services/MillionStatsService';
 import {TelegramService} from '../../services/TelegramService';
@@ -10,7 +10,7 @@ import {TelegramService} from '../../services/TelegramService';
 export class SocialStatusDisplay {
   timer: NodeJS.Timer;
   twitterName = 'Twitter ';
-  rService: RedditService; 
+  //rService: RedditService; 
 
   constructor() {
 
@@ -20,7 +20,7 @@ export class SocialStatusDisplay {
 
   async getData(): Promise<void> {
     try {
-      this.rService = await new RedditService();
+      //this.rService = await new RedditService();
 
       this.getTwitterCount();
       //this.getRedditCount();
@@ -51,6 +51,7 @@ export class SocialStatusDisplay {
     }
   }
 
+  /*
   async getRedditCount(): Promise<void> {
     try {
       const subs = await this.rService.getMMSubCount();
@@ -59,6 +60,7 @@ export class SocialStatusDisplay {
       console.log('Reddit subs error: ', error);
     }
   }
+  */
 
   async getEmailSubCount(): Promise<void> {
     try {

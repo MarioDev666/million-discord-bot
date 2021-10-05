@@ -6,7 +6,7 @@ export const devRoleIds = {
   leadAmbassador: '872062467621138481'
 }
 */
-export const prodRoleIds = {
+export const devRoleIds = {
   leadAdmin: '894351901112565809',
   admins: '894351901112565808',
   leadDev: '894351901112565809',

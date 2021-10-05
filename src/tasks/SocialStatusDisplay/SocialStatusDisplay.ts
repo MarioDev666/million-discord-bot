@@ -23,8 +23,8 @@ export class SocialStatusDisplay {
       this.rService = await new RedditService();
 
       this.getTwitterCount();
-      this.getRedditCount();
-      this.getEmailSubCount();
+      //this.getRedditCount();
+      //this.getEmailSubCount();
       this.getHoldersCount();
       this.getPrice();
       this.getTelegramCount();

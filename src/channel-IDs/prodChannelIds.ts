@@ -1,13 +1,13 @@
 export const prodChannelIds = {
-  lounge: '870409423825276995',
-  suggestion_box: '870438625219842090',
-  botCommandsChannel: '870419672774868995',
-  twitterStats: '875329757162639380',
-  redditStats: '875518239906598922',
-  emailSubsChannel: '875776790734454805',
-  holdersChannel: '875776895566876703',
-  price: '881143911404412968',
-  telegramCount: '881145014481199144',
-  youTubePromotion: '878211437883949056',
-  botCommand_DevChannel: '870759676848013332'
+  lounge: '882029588937572427',
+  suggestion_box: '882029588937572429',
+  botCommandsChannel: '894351904568651798',
+  twitterStats: '894351903905964112',
+  redditStats: '894351903536853011',
+  emailSubsChannel: '894351903905964113',
+  holdersChannel: '894351903536853008',
+  price: '894351903536853007',
+  telegramCount: '894351903536853009',
+  youTubePromotion: '885463886487252993',
+  botCommand_DevChannel: '894351902693818396'
 }
